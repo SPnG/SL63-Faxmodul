@@ -71,6 +71,10 @@ FaxNr=$2
 FaxPfad=/home/david/trpword/$cupsout
 FaxPfadWin="\\\\$linuxpc"\\$smbshare\\$cupsout\\
 ichbins=`whoami`
+#############################################################
+winpc=`cat /etc/hosts | grep $ichbins | awk {'print $1'}`
+# ToDo: Pruefung, ob eine gueltige IP Adresse gefunden wurde
+#############################################################
 Xdialog="/usr/bin/Xdialog"
 export XAUTHORITY=/home/$ichbins/.Xauthority
 export DISPLAY=`cat /home/$ichbins/DisplayAusgabe`
